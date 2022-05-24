@@ -35,6 +35,10 @@ Merupakan sebuah proses dimana suatu zat bergerak dari konsentrasi tinggi ke kon
 ![Screenshot (677)](https://user-images.githubusercontent.com/105905933/170133446-61b44ef8-7ce9-4325-b6c7-c65438551fa3.png)
 
 Diskritisasi dilakukan secara eksplisit (FTCS), jika syarat batas terpenuhi = overflow
+### Diskritisasi Penuruna model menggunakan metode leapfrog
+
+![diskritisasi](https://user-images.githubusercontent.com/105905933/170133820-4710f73e-c5ad-4bfa-8097-f6c817725f94.png)
+
 
 ## MODUL 2 : ADVEKSI-DIFUSI 2D
 Adveksi Difusi 2 D dan menguji kekonvergenan\ud solusi numerik. Metode beda hingga merupakan suatu metode numerik yang sering digunakan dalam\ud penyelesaian masalah Persamaan Differensial Parsial karena metode ini dapat memberikan solusi yang\ud cukup akurat. Kemampuan metode yang beda hingga dalam memberikan hasil pendekatan tersebut karena\ud didukung oleh kemajuan yang pesat dalam bidang komputer.
@@ -43,101 +47,113 @@ Ada dua skema dasar yang dapat digunakan untuk menyelesaikan persamaan differens
 ### Pengaplikasian
 Persamaan matematika lain yang memodelkan fenomena gejala alam adalah persamaan Adveksi-Difusi atau yang sering disebut dengan persamaan transpor. Persamaan Adveksi Diusi adalah persamaan matematis yang didesign untuk mempelajari fenomena transpor polutan. Hasil keluaran model ada dua bentuk data yaitu data spasial dan temporal, dimana data spasial berupa parameter konsentrasi sedimen deposisi/erosi, bottom    shear stress,   arus   pasang   surut   dan   salinitas.
 ### Penulisan Script
-#!/usr/bin/env python
-# coding: utf-8
 
-import matplotlib.pyplot as plt
-import numpy as np
-import sys
+Import library pyton
 
-def percentage(part, whole):
-    percentage = 100 * float(part)/float(whole)
-    return str(round(percentage,2)) + "x"
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import sys
 
-#Masukan Parameter Awal
-C = 0.61
-ad = 1.61
+Pendefinisian persentase
+   
+   def percentage(part, whole):
+        percentage = 100 * float(part)/float(whole)
+        return str(round(percentage,2)) + "x"
 
-#Arah Arus
-theta = 61
-#theta = 121
-#theta = 196
-#theta = 376
+Memasukkan Parameter Awal
 
-#Parameter Lanjutan
-q = 0.95 
-x = 300 
-y = 300 
-dt = 0.5 
-dx = 3 
-dy = 3
+    C = 0.61
+    ad = 1.61
 
-#Lama Simulasi
-Tend = 106
-#Tend = 1
-dt = 0.5
+Arah Arus
 
-#Polutan
-px = 150
-py = 136
-Ic = 516
+    theta = 61
+    #theta = 121
+    #theta = 196
+    #theta = 376
 
-#Perhitungan U dan V
-u = C * np.sin(theta*np.pi/180)
-v = C * np.cos(theta*np.pi/180)
-dt_count = 1/((abs(u)/(q*dx))+(abs(v)/(q*dy))+(2*ad/(q*dx**2))+(2*ad/(q*dy*2)))
+Parameter Lanjutan
 
-Nx = int(x/dx)  #number of mesh in x direction
-Ny = int(y/dy)  #number of mesh in y direction
-Nt = int(Tend/dt)
+    q = 0.95 
+    x = 300 
+    y = 300 
+    dt = 0.5 
+    dx = 3 
+    dy = 3
 
-#perhitungan titik polutan di buang
-px1 = int(px/dx)
-py1 = int(py/dy)
+Lama Simulasi
+    
+    Tend = 106
+    #Tend = 1
+    dt = 0.5
 
-#fungsi disederhanakan
-lx = u*dt/dx
-ly = v*dt/dy
-ax = ad*dt/dx**2
-ay = ad*dt/dy**2
-cfl = (2*ax + 2*ay + abs(lx) + abs(ly))  #syarat kestabilan CFL
+Nilai Polutan
 
-#perhitungan cfl
-if cfl >= q:
-    print('CFL Violated, please use dt :'+str(round(dt_count,4)))
-    sys.exit ()
-#%%
+    px = 150    #Nilai polutan pada grid x
+    py = 136    #Nilai polutan pada grid y
+    Ic = 516    #Jumlah nilai polutan
 
-#pembuatan grid 
-x_grid = np.linspace(0-dx, x+dx, Nx+2) #ghostnode boundary
-y_grid = np.linspace(0-dx, y+dy, Ny+2) #ghostnode boundary
-t = np.linspace(0, Tend, Nt+1)
-x_mesh, y_mesh = np.meshgrid(x_grid,y_grid)
-F = np.zeros((Nt+1, Ny+2, Nx+2))
+Perhitungan U(arah) dan V(kecepatan)
 
-#kondisi awal
+    u = C * np.sin(theta*np.pi/180)
+    v = C * np.cos(theta*np.pi/180)
+    dt_count = 1/((abs(u)/(q*dx))+(abs(v)/(q*dy))+(2*ad/(q*dx**2))+(2*ad/(q*dy*2)))
+
+    Nx = int(x/dx)  #number of mesh in x direction
+    Ny = int(y/dy)  #number of mesh in y direction
+    Nt = int(Tend/dt)
+
+Perhitungan titik polutan di buang
+    px1 = int(px/dx)
+    py1 = int(py/dy)
+
+Fungsi disederhanakan
+    
+    lx = u*dt/dx
+    ly = v*dt/dy
+    ax = ad*dt/dx**2
+    ay = ad*dt/dy**2
+    cfl = (2*ax + 2*ay + abs(lx) + abs(ly))  #syarat kestabilan CFL
+
+Perhitungan cfl
+
+    if cfl >= q:
+        print('CFL Violated, please use dt :'+str(round(dt_count,4)))
+        sys.exit ()
+
+Pembuatan grid 
+    
+    x_grid = np.linspace(0-dx, x+dx, Nx+2) #ghostnode boundary
+    y_grid = np.linspace(0-dx, y+dy, Ny+2) #ghostnode boundary
+    t = np.linspace(0, Tend, Nt+1)
+    x_mesh, y_mesh = np.meshgrid(x_grid,y_grid)
+    F = np.zeros((Nt+1, Ny+2, Nx+2))
+
+Kondisi awal
+
 F[0,py1,px1]=Ic
-#%%
 
-#Iterasi
-for n in range (0, Nt):
-    for i in range (1,Ny+1):
-        for j in range (1, Nx+1):
-         F[n+1,i,j]=((F[n,i,j]*(1-abs(lx)-abs(ly))) + \
-                (0.5*(F[n,i-1,j]*(ly+abs(ly)))) + \
-                (0.5*(F[n,i+1,j]*(abs(ly)-ly))) + \
-                (0.5*(F[n,i,j-1]*(lx+abs(lx)))) + \
-                (0.5*(F[n,i,j+1]*(abs(lx)-lx))) + \
-                (ay*(F[n,i+1,j]-2*(F[n,i,j])+F[n,i-1,j])) +\
-                (ax*(F[n,i,j+1]-2*(F[n,i,j])+F[n,i,j-1])))
-    #syarat batas
-    F[n+1,0,:] = 0 #bc bawah
+Iterasi
+
+    for n in range (0, Nt):
+        for i in range (1,Ny+1):
+            for j in range (1, Nx+1):
+             F[n+1,i,j]=((F[n,i,j]*(1-abs(lx)-abs(ly))) + \
+                    (0.5*(F[n,i-1,j]*(ly+abs(ly)))) + \
+                    (0.5*(F[n,i+1,j]*(abs(ly)-ly))) + \
+                    (0.5*(F[n,i,j-1]*(lx+abs(lx)))) + \
+                    (0.5*(F[n,i,j+1]*(abs(lx)-lx))) + \
+                    (ay*(F[n,i+1,j]-2*(F[n,i,j])+F[n,i-1,j])) +\
+                    (ax*(F[n,i,j+1]-2*(F[n,i,j])+F[n,i,j-1])))
+Syarat batas
+   
+   F[n+1,0,:] = 0 #bc bawah
     F[n+1,:,0] = 0 #bc kiri
     F[n+1,Ny+1,:] = 0 #bc atas
     F[n+1,:,Nx+1] = 0 #bc kanan
-#%%
 
-    #Output Gambar
+Output Gambar
+   
     plt.clf()
     plt.pcolor(x_mesh, y_mesh, F[n+1, :, :], cmap = 'jet',shading='auto',edgecolor='k')
     cbar=plt.colorbar(orientation='vertical',shrink=0.95,extend='both')
