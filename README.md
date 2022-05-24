@@ -23,7 +23,7 @@ merupakan gabungan dari selisih maju terhadap waktu dan selisih pusat terhadap r
 4. Upstream
 
 ### Adveksi-Difusi 2D
-Adveksi Difusi 2 D dan menguji kekonvergenan\ud solusi numerik. Metode beda hingga merupakan suatu metode numerik yang sering digunakan dalam\ud penyelesaian masalah Persamaan Differensial Parsial karena metode ini dapat memberikan solusi yang\ud cukup akurat. Kemampuan metode beda hingga dalam memberikan hasil pendekatan tersebut karena\ud didukung oleh kemajuan yang pesat dalam bidang komputer.
+Adveksi Difusi 2 D dan menguji kekonvergenan\ud solusi numerik. Metode beda hingga merupakan suatu metode numerik yang sering digunakan dalam\ud penyelesaian masalah Persamaan Differensial Parsial karena metode ini dapat memberikan solusi yang\ud cukup akurat. Kemampuan metode yang beda hingga dalam memberikan hasil pendekatan tersebut karena\ud didukung oleh kemajuan yang pesat dalam bidang komputer.
 ### Metode 
 Ada dua skema dasar yang dapat digunakan untuk menyelesaikan persamaan differensial dengan metode beda hingga (FDM), yaitu skema ekspisit dan implisit.
 ### Script
