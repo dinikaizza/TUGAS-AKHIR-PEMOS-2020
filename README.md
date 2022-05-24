@@ -143,6 +143,10 @@ for n in range (0, Nt):
     plt.close()
     print('running timestep ke:' +str(n+1) + ' dari:' +str(Nt) + '('+ percentage(n+1,Nt)+')')
     print('Nilai CFL:' +str(cfl) + 'dengan arah: ' +str(theta))
+    
+    
+    ###Hasil
+    
 ### Pembahasan
 Pada skenario 1 didapatkan bahwa konsentrasi yang ada pada grafik terus berkurang seiring bertambahnya periode. Selain itu, terlihat juga pergerakan polutan ke arah timur yang mana ini menandakan bahwa arus yang terjadi dilapangan juga bergerak kearah timur. Pada skenario 2, terlihat adanya penurunan konsentrasi yang terjadisecara drastic dalam kurun periode t 1-31. Arah arus pun terlihat bergerak ke arah tenggara yang mana hal ini diikuti oleh pergerakan konsentrasi polutan yang bergerak secara kontinu ke arah tenggara yang ditandai dengan adanya perpindahan grid pada grafik. Pada skenario 3 Arus bergerak ke arah selatan yang mana diikuti juga oleh pergerakan konsentrasi polutan ke arah yang sama. Konsentrasi polutan pada skenario 3 juga semakin menurun seiring bertambahnya periode t pada grafik yang mana pada titik akhir ini, konsentrasi polutan tertinggi memiliki nilai 4. Pada skenario 4, terlihat bahwa pada periode antara t 0,5-18 penurunan konsentrasi polutan terjadi secara drastis dimana hal ini diikuti oleh pergerakan konsentrasi polutan yang semakin bergerak ke arah timur laut seiring bertambahnya nilai t. Arah pergerakan dan penyebaran suatu zat yang ada pada suatu perairan biasanya dipengaruhi oleh konsentrasi zat itu sendiri (Firmansyah et al., 2021)
 ## MODUL 4 : HIDRODINAMIKA 2D
