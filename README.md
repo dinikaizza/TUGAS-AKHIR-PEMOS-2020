@@ -6,7 +6,7 @@ Tugas ini dibuat untuk memenuhi Tugas Akhir Praktikum Pemograman Oseanografi 202
 3. Meiriza Adwina Setiorini
 4. Nandika Abubakar Putri
 5. Nanda Shifa Sherina
-6. Oliver Kan? Parlindungan
+6. Oliver Kahn Parlindungan
 7. Renata Gending Fadhillah 
 ## DAFTAR ISI :
 1. MODUL 1 : ADVEKSI-DIVUSI 1D 
