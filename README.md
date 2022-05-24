@@ -16,12 +16,25 @@ Tugas ini dibuat untuk memenuhi Tugas Akhir Praktikum Pemograman Oseanografi 202
 ## MODUL 1 : ADVEKSI-DIFUSI 1D
 ### Adveksi 
 Adveksi merupakan mekanisme perpindahan massa suatu materi dari titik ke titik lainnya. Persamaan adveksi sendiri merupakan suatu persamaan gelombang linier orde satu dan termasuk dalam persamaan hiperbolik yang menggambarkan mekanisme trasnportasi suatu gas atau zat cair dengan arah tertentu. Persamaan adveksi memiliki 2 tipe yaitu hitungan yaitu eksplisit dan implisit. Persamaan umum adveksi ∂F/∂t=-u(∂F/∂x)
-### Metode Penurunan 
+#### Metode Penurunan 
 1. FTCS 
 
 merupakan gabungan dari selisih maju terhadap waktu dan selisih pusat terhadap ruang.
-3. Leapfrog
-4. Upstream
+2. Leapfrog
+
+Merupakan perluasan dari metode beda tengah (Central Difference) terhadap ruang dan waktu. Skema Leapfrog didapatkan dari turunan dari deret taylor, merupakan skema yang konsisten jika C≤1
+![download](https://user-images.githubusercontent.com/105905933/170132423-b2970e2f-cf50-42ee-b7a8-b3a945dd4ce0.png)
+
+3. Upstream
+
+Merupakan skema yang digunakan untuk melengkapi ketidaksempurnaan metode leapfrog. Karena nilai konsentrasi dalam komputer dapat menjadi negativ. Oleh karena itu metode upstream dibuat untuk model positif dari konsentrasi di alam yang menuju ke lautan . metode ini menggunakan pendekatan beda maju untuk turunan waktu, sedangkan terhadap ruang melihat arah kecepatan (u). Jika u>0 maka pendekatan beda mundur. Sebaliknya jika u<0 maka pendekatan beda maju.
+### DIFUSI
+
+Merupakan sebuah proses dimana suatu zat bergerak dari konsentrasi tinggi ke konsentrasi rendah. Contoh pengaplikasian Oil Spill, persamaan awal :
+
+![Screenshot (677)](https://user-images.githubusercontent.com/105905933/170133446-61b44ef8-7ce9-4325-b6c7-c65438551fa3.png)
+
+Diskritisasi dilakukan secara eksplisit (FTCS), jika syarat batas terpenuhi = overflow
 
 ## MODUL 2 : ADVEKSI-DIFUSI 2D
 Adveksi Difusi 2 D dan menguji kekonvergenan\ud solusi numerik. Metode beda hingga merupakan suatu metode numerik yang sering digunakan dalam\ud penyelesaian masalah Persamaan Differensial Parsial karena metode ini dapat memberikan solusi yang\ud cukup akurat. Kemampuan metode yang beda hingga dalam memberikan hasil pendekatan tersebut karena\ud didukung oleh kemajuan yang pesat dalam bidang komputer.
@@ -146,7 +159,7 @@ for n in range (0, Nt):
     
     
  ###Hasil
- https://user-images.githubusercontent.com/106167818/170089041-399d0637-f3e5-4135-93af-8cc49595dc06.png
+https://user-images.githubusercontent.com/106167818/170089041-399d0637-f3e5-4135-93af-8cc49595dc06.png
 https://user-images.githubusercontent.com/106167818/170089095-93c2add1-dac8-462c-bceb-8d738667c29d.png
 https://user-images.githubusercontent.com/106167818/170089335-2dd88704-6d68-4388-970c-90fa7df8b2bb.png
 
@@ -170,13 +183,11 @@ import matplotlib.pyplot as plt
 
 from siphon.simplewebservice.ndbc import NDBC
 
-####################################################
 # Get a pandas data frame of all of the observations, meteorogical data is the default
 # observation set to query
 df = NDBC.realtime_observations('41033') #Station ID
 df.head()
 
-##############################################
 # Let's make a simple times series plot to checkout what the data look like.
 fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 10))
 ax2b = ax2.twinx()
