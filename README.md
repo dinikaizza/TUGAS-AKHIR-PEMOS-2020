@@ -27,6 +27,7 @@ Adveksi Difusi 2 D dan menguji kekonvergenan\ud solusi numerik. Metode beda hing
 ### Metode 
 Ada dua skema dasar yang dapat digunakan untuk menyelesaikan persamaan differensial dengan metode beda hingga (FDM), yaitu skema ekspisit dan implisit.
 ### Pengaplikasian
+Persamaan matematika
 ### Script
 #!/usr/bin/env python
 # coding: utf-8
