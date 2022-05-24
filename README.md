@@ -104,6 +104,7 @@ Perhitungan U(arah) dan V(kecepatan)
     Nt = int(Tend/dt)
 
 Perhitungan titik polutan di buang
+   
     px1 = int(px/dx)
     py1 = int(py/dy)
 
@@ -131,7 +132,7 @@ Pembuatan grid
 
 Kondisi awal
 
-F[0,py1,px1]=Ic
+    F[0,py1,px1]=Ic
 
 Iterasi
 
@@ -147,7 +148,7 @@ Iterasi
                     (ax*(F[n,i,j+1]-2*(F[n,i,j])+F[n,i,j-1])))
 Syarat batas
    
-   F[n+1,0,:] = 0 #bc bawah
+    F[n+1,0,:] = 0 #bc bawah
     F[n+1,:,0] = 0 #bc kiri
     F[n+1,Ny+1,:] = 0 #bc atas
     F[n+1,:,Nx+1] = 0 #bc kanan
@@ -174,62 +175,7 @@ Output Gambar
     print('Nilai CFL:' +str(cfl) + 'dengan arah: ' +str(theta))
     
     
- ###Hasil
-https://user-images.githubusercontent.com/106167818/170089041-399d0637-f3e5-4135-93af-8cc49595dc06.png
-https://user-images.githubusercontent.com/106167818/170089095-93c2add1-dac8-462c-bceb-8d738667c29d.png
-https://user-images.githubusercontent.com/106167818/170089335-2dd88704-6d68-4388-970c-90fa7df8b2bb.png
-
-### Pembahasan
-Pada skenario 1 didapatkan bahwa konsentrasi yang ada pada grafik terus berkurang seiring bertambahnya periode. Selain itu, terlihat juga pergerakan polutan ke arah timur yang mana ini menandakan bahwa arus yang terjadi dilapangan juga bergerak kearah timur. Pada skenario 2, terlihat adanya penurunan konsentrasi yang terjadisecara drastic dalam kurun periode t 1-31. Arah arus pun terlihat bergerak ke arah tenggara yang mana hal ini diikuti oleh pergerakan konsentrasi polutan yang bergerak secara kontinu ke arah tenggara yang ditandai dengan adanya perpindahan grid pada grafik. Pada skenario 3 Arus bergerak ke arah selatan yang mana diikuti juga oleh pergerakan konsentrasi polutan ke arah yang sama. Konsentrasi polutan pada skenario 3 juga semakin menurun seiring bertambahnya periode t pada grafik yang mana pada titik akhir ini, konsentrasi polutan tertinggi memiliki nilai 4. Pada skenario 4, terlihat bahwa pada periode antara t 0,5-18 penurunan konsentrasi polutan terjadi secara drastis dimana hal ini diikuti oleh pergerakan konsentrasi polutan yang semakin bergerak ke arah timur laut seiring bertambahnya nilai t. Arah pergerakan dan penyebaran suatu zat yang ada pada suatu perairan biasanya dipengaruhi oleh konsentrasi zat itu sendiri (Firmansyah et al., 2021)
-## MODUL 4 : HIDRODINAMIKA 2D
-Secara umum, model hidrodinamika 2D yang dijalankan cukup mampu merepresentasikan kondisi hidrodinamika di lokasi penelitian. Hasil simulasi model menunjukkan bahwa arus cenderung memiliki arah bolak - balik sesuai dengan pasut yang terjadi. Pola sebaran konsentrasi Ammonia, BOD, Nitrat, dan TSS secara signifikan dipengaruhi oleh pola arus yang terjadi. Dalam menyelesaikan persamaan Hdirodinamika 2D, dapat menggunakan script yang telah diberikan. Pada saat menggunakan script, diperlukan coding dengan menggunakan Google Colab dan library seperti matplotlib dan numphy, selain itu juga diperlukan modul siphon. Dimana dalam mengerjakan script ini diperlukan beberapa data untuk memenuhi nilai parameter yang ada. Berdasarkan data yang telah didapatkan, maka dapat dibuat grafik perhitungan nilai proses awal dengan beberapa parameter. Setelah memasukkan parameter yang diperlukan, maka akan didapat juga  pressure, windspeed, dan water temperature. Untuk mendapatkan hasil dari perhitungan yang telah dilakukan. Selanjutnya klik run untuk mendapatkan hasil grafik yang diperlukan. Dimana nantinya akan didapat 3 grafik dalam menyelesai persamaan ini, yaitu terdapat grafik pressure, windspeed, dan water temperature.
-
-### Script
-# Copyright (c) 2018 Siphon Contributors.
-# Distributed under the terms of the BSD 3-Clause License.
-# SPDX-License-Identifier: BSD-3-Clause
-"""
-NDBC Bouy Meteorological Data Request
-=====================================
-The NDBC keeps a 45-day recent rolling file for each bouy. This examples shows how to access
-the basic meteorogical data from a buoy and make a simple plot.
-"""
-
-import matplotlib.pyplot as plt
-
-from siphon.simplewebservice.ndbc import NDBC
-
-# Get a pandas data frame of all of the observations, meteorogical data is the default
-# observation set to query
-df = NDBC.realtime_observations('41033') #Station ID
-df.head()
-
-# Let's make a simple times series plot to checkout what the data look like.
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 10))
-ax2b = ax2.twinx()
-
-# Pressure
-ax1.plot(df['time'], df['pressure'], color='black')
-ax1.set_ylabel('Pressure [hPa]')
-fig.suptitle('Kelompok 14_Pemodelan', fontsize=18)
-
-
-# Wind Speed, gust, direction
-ax2.plot(df['time'], df['wind_speed'], color='tab:orange')
-ax2.plot(df['time'], df['wind_gust'], color='tab:olive', linestyle='--')
-ax2b.plot(df['time'], df['wind_direction'], color='tab:blue', linestyle='-')
-ax2.set_ylabel('Wind Speed [m/s]')
-ax2b.set_ylabel('Wind Direction')
-
-
-# Water temperature
-ax3.plot(df['time'], df['water_temperature'], color='tab:brown')
-ax3.set_ylabel('Water Temperature [degC]')
-
-plt.show()
-
-
-###Hasil
+### Hasil 
 ![image](https://user-images.githubusercontent.com/106167818/170089041-399d0637-f3e5-4135-93af-8cc49595dc06.png)
 ![image](https://user-images.githubusercontent.com/106167818/170089095-93c2add1-dac8-462c-bceb-8d738667c29d.png)
 ![image](https://user-images.githubusercontent.com/106167818/170089335-2dd88704-6d68-4388-970c-90fa7df8b2bb.png)
@@ -242,5 +188,66 @@ plt.show()
 ![image](https://user-images.githubusercontent.com/106167818/170094443-ee9f9bd5-fd54-4521-bde2-6fbe8c501f7e.png)
 ![image](https://user-images.githubusercontent.com/106167818/170094503-003a0abf-13e7-4bf0-8576-db9c8a614d11.png)
 ![image](https://user-images.githubusercontent.com/106167818/170095125-b755f283-63b8-49ed-884a-e1a4553ca879.png)
+### Pembahasan
+Pada skenario 1 didapatkan bahwa konsentrasi yang ada pada grafik terus berkurang seiring bertambahnya periode. Selain itu, terlihat juga pergerakan polutan ke arah timur yang mana ini menandakan bahwa arus yang terjadi dilapangan juga bergerak kearah timur. Pada skenario 2, terlihat adanya penurunan konsentrasi yang terjadisecara drastic dalam kurun periode t 1-31. Arah arus pun terlihat bergerak ke arah tenggara yang mana hal ini diikuti oleh pergerakan konsentrasi polutan yang bergerak secara kontinu ke arah tenggara yang ditandai dengan adanya perpindahan grid pada grafik. Pada skenario 3 Arus bergerak ke arah selatan yang mana diikuti juga oleh pergerakan konsentrasi polutan ke arah yang sama. Konsentrasi polutan pada skenario 3 juga semakin menurun seiring bertambahnya periode t pada grafik yang mana pada titik akhir ini, konsentrasi polutan tertinggi memiliki nilai 4. Pada skenario 4, terlihat bahwa pada periode antara t 0,5-18 penurunan konsentrasi polutan terjadi secara drastis dimana hal ini diikuti oleh pergerakan konsentrasi polutan yang semakin bergerak ke arah timur laut seiring bertambahnya nilai t. Arah pergerakan dan penyebaran suatu zat yang ada pada suatu perairan biasanya dipengaruhi oleh konsentrasi zat itu sendiri (Firmansyah et al., 2021)
+## MODUL 4 : HIDRODINAMIKA 2D
+Secara umum, model hidrodinamika 2D yang dijalankan cukup mampu merepresentasikan kondisi hidrodinamika di lokasi penelitian. Hasil simulasi model menunjukkan bahwa arus cenderung memiliki arah bolak - balik sesuai dengan pasut yang terjadi. Pola sebaran konsentrasi Ammonia, BOD, Nitrat, dan TSS secara signifikan dipengaruhi oleh pola arus yang terjadi. Dalam menyelesaikan persamaan Hdirodinamika 2D, dapat menggunakan script yang telah diberikan. Pada saat menggunakan script, diperlukan coding dengan menggunakan Google Colab dan library seperti matplotlib dan numphy, selain itu juga diperlukan modul siphon. Dimana dalam mengerjakan script ini diperlukan beberapa data untuk memenuhi nilai parameter yang ada. Berdasarkan data yang telah didapatkan, maka dapat dibuat grafik perhitungan nilai proses awal dengan beberapa parameter. Setelah memasukkan parameter yang diperlukan, maka akan didapat juga  pressure, windspeed, dan water temperature. Untuk mendapatkan hasil dari perhitungan yang telah dilakukan. Selanjutnya klik run untuk mendapatkan hasil grafik yang diperlukan. Dimana nantinya akan didapat 3 grafik dalam menyelesai persamaan ini, yaitu terdapat grafik pressure, windspeed, dan water temperature.
+
+### Script
+#### Copyright (c) 2018 Siphon Contributors.
+    Distributed under the terms of the BSD 3-Clause License.PDX-License-Identifier: BSD-3-Clause
+
+    NDBC Bouy Meteorological Data Request
+    =====================================
+    The NDBC keeps a 45-day recent rolling file for each bouy. This examples shows how to access
+    the basic meteorogical data from a buoy and make a simple plot.
+    """
+
+Import Library phyton
+    import matplotlib.pyplot as plt
+
+    from siphon.simplewebservice.ndbc import NDBC
+
+Memasukkan data observasi
+    
+    # Get a pandas data frame of all of the observations, meteorogical data is the default
+    # observation set to query
+    df = NDBC.realtime_observations('41033') #Station ID
+    df.head()
+
+Menyederhanakan time series
+
+    # Let's make a simple times series plot to checkout what the data look like.
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 10))
+    ax2b = ax2.twinx()
+
+Membuat grafik data tekanan terhadap waktu
+    
+    # Pressure
+    ax1.plot(df['time'], df['pressure'], color='black')
+    ax1.set_ylabel('Pressure [hPa]')
+    fig.suptitle('Kelompok 14_Pemodelan', fontsize=18)
+
+Membuat grafik data kecepatan , tekanan dan arah angin terhadap waktu
+   
+    # Wind Speed, gust, direction
+    ax2.plot(df['time'], df['wind_speed'], color='tab:orange')
+    ax2.plot(df['time'], df['wind_gust'], color='tab:olive', linestyle='--')
+    ax2b.plot(df['time'], df['wind_direction'], color='tab:blue', linestyle='-')
+    ax2.set_ylabel('Wind Speed [m/s]')
+    ax2b.set_ylabel('Wind Direction')
+
+Membuat grafik suhu perairan
+
+    # Water temperature
+    ax3.plot(df['time'], df['water_temperature'], color='tab:brown')
+    ax3.set_ylabel('Water Temperature [degC]')
+
+Show 
+
+    plt.show()
+
+###Hasil
+
 ### Pembahasan
 Dapat dilihat pada hasil grafik bahwa nilai Pressure tertinggi menyentuh angka 1030 hPa yang mana itu terjadi pada akhir bulan April 2022. Sedangkan untuk nilai Wind Direction dan Wind Speed tidak konstant dan terus berubah-ubah dan mengalami penurunan di akhir bulan April 2022. Yang terakhir, untuk nilai Water Temperature terus mengalami kenaikan dalam rentang waktu 45 hari tersebut hingga akhirnya mencapai angka lebih dari 24 degC. Apabila dilihat dari nilai hasil grafiknya, Stasiun ini memiliki nilai gelombang dan arus yang cukup besar. Stasiun ini sendiri terletak pada koordinat 32.279 N 80.406 W (32°16'44" N 80°24'23" W) yang mana apabila dilihat pada Google Earth maka lokasi stasiun ini terletak di daerah dekat pesisir Pulau Pritchards dan Pulau Hunting di Negara Bagian Amerika Serikat yaitu Carolina Selatan. Artinya baik arus, gelombang, angin atau faktor oseanografi pada Station ini tidak begitu besar seperti yang ada di laut lepas atau di tengah samudera. Selain itu, Station ini juga terletak dekat dengan lokasi Blake Pateau. Lokasi Blake Plateau sendiri memiliki arus yang statis. Namun, daerah ini sendiri masih dapat terpengaruh oleh adanya arus teluk yang berbelok dan menghasilkan pusaran siklon yang disebut dengan Charlestone Gyre (Gula et al., 2015). Arus ini sendiri terjadi akibat dari adanya perbedaan temperatur yang ada disekitar wilayah tersebut yang terdiri dari Blake Plateau, Blake Ridge, Charlestone Bump dll. Adanya anomali ini dapat mengakibatkan nilai yang ada pada grafik menjadi lebih tinggi dari biasanya
