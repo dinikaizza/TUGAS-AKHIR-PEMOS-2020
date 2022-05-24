@@ -1,1 +1,1 @@
-
+Anda dapat menggunakan skrip yang ditentukan saat menyelesaikan persamaan hidrodinamika 2D. Saat bekerja dengan skrip ini, beberapa data diperlukan untuk memenuhi nilai parameter yang ada. Masukkan parameter yang diperlukan dan Anda juga akan mendapatkan tekanan, kecepatan angin, dan suhu air  . Mendapatkan hasil dari perhitungan yang  dilakukan. Kemudian klik Run untuk mendapatkan hasil grafis yang Anda inginkan. Di mana tiga grafik yang Anda dapatkan ketika menyelesaikan persamaan ini: tekanan, kecepatan angin, dan suhu air pada 
