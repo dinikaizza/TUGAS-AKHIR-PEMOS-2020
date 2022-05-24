@@ -10,32 +10,32 @@ def percentage(part, whole):
     return str(round(percentage,2)) + "x"
 
 #Masukan Parameter Awal
-C = 0.61
-ad = 1.61
+C = 1.73
+ad = 1.73
 
 #Arah Arus
-theta = 61
-#theta = 121
-#theta = 196
-#theta = 376
+theta = 73
+#theta = 133
+#theta = 208
+#theta = 388
 
 #Parameter Lanjutan
 q = 0.95 
-x = 300 
-y = 300 
+x = 500 
+y = 500 
 dt = 0.5 
-dx = 3 
-dy = 3
+dx = 5
+dy = 5
 
 #Lama Simulasi
-Tend = 106
+Tend = 107
 #Tend = 1
 dt = 0.5
 
 #Polutan
-px = 150
-py = 136
-Ic = 516
+px = 250
+py = 237
+Ic = 1073
 
 #Perhitungan U dan V
 u = C * np.sin(theta*np.pi/180)
@@ -111,3 +111,4 @@ for n in range (0, Nt):
     plt.close()
     print('running timestep ke:' +str(n+1) + ' dari:' +str(Nt) + '('+ percentage(n+1,Nt)+')')
     print('Nilai CFL:' +str(cfl) + 'dengan arah: ' +str(theta))
+
