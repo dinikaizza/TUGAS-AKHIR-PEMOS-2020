@@ -27,7 +27,7 @@ Adveksi Difusi 2 D dan menguji kekonvergenan\ud solusi numerik. Metode beda hing
 ### Metode 
 Ada dua skema dasar yang dapat digunakan untuk menyelesaikan persamaan differensial dengan metode beda hingga (FDM), yaitu skema ekspisit dan implisit.
 ### Pengaplikasian
-Persamaan matematika lain yang memodelkan fenomena gejala alam adalah persamaan
+Persamaan matematika lain yang memodelkan fenomena gejala alam adalah persamaan Adveksi-Difusi atau yang sering disebut dengan persamaan transpor.
 ### Script
 #!/usr/bin/env python
 # coding: utf-8
