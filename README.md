@@ -15,7 +15,7 @@ Tugas ini dibuat untuk memenuhi Tugas Akhir Praktikum Pemograman Oseanografi 202
 4. MODUL 4 : HIDRODINAMIKA 2D
 ## MODUL 1 : ADVEKSI-DIVUSI 1D
 ### Adveksi 
-Adveksi merupakan mekanisme perpindahan massa suatu materi dari titik ke titik lainnya. Persamaan adveksi sendiri merupakan suatu persamaan gelombang linier orde satu dan termasuk dalam persamaan hiperbolik yang menggambarkan mekanisme trasnportasi suatu gas atau zat cair dengan arah tertentu. Persamaan adveksi memiliki 2 tipe hitungan yaitu eksplisit dan implisit. Persamaan umum adveksi ∂F/∂t=-u(∂F/∂x)
+Adveksi merupakan mekanisme perpindahan massa suatu materi dari titik ke titik lainnya. Persamaan adveksi sendiri merupakan suatu persamaan gelombang linier orde satu dan termasuk dalam persamaan hiperbolik yang menggambarkan mekanisme trasnportasi suatu gas atau zat cair dengan arah tertentu. Persamaan adveksi memiliki 2 tipe yaitu hitungan yaitu eksplisit dan implisit. Persamaan umum adveksi ∂F/∂t=-u(∂F/∂x)
 ### Metode Penurunan 
 1. FTCS 
 merupakan gabungan dari selisih maju terhadap waktu dan selisih pusat terhadap ruang.
