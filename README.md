@@ -194,5 +194,19 @@ ax3.set_ylabel('Water Temperature [degC]')
 
 plt.show()
 
+
+###Hasil
+![image](https://user-images.githubusercontent.com/106167818/170089041-399d0637-f3e5-4135-93af-8cc49595dc06.png)
+![image](https://user-images.githubusercontent.com/106167818/170089095-93c2add1-dac8-462c-bceb-8d738667c29d.png)
+![image](https://user-images.githubusercontent.com/106167818/170089335-2dd88704-6d68-4388-970c-90fa7df8b2bb.png)
+![image](https://user-images.githubusercontent.com/106167818/170090382-f07a3f94-afe0-4867-9f5f-849b0d02b3b1.png)
+![image](https://user-images.githubusercontent.com/106167818/170090459-dbf304b1-515b-4105-8f79-17a8e2f9a494.png)
+![image](https://user-images.githubusercontent.com/106167818/170091554-affe033a-c414-490a-a727-72295945841b.png)
+![image](https://user-images.githubusercontent.com/106167818/170092778-d744fdc8-fe71-4354-a8c8-6b881360116b.png)
+![image](https://user-images.githubusercontent.com/106167818/170093196-6e0ba3ea-d92f-4f73-a617-bbd633600313.png)
+![image](https://user-images.githubusercontent.com/106167818/170093790-a4c976bb-f435-40b8-916a-3b12402b4f41.png)
+![image](https://user-images.githubusercontent.com/106167818/170094443-ee9f9bd5-fd54-4521-bde2-6fbe8c501f7e.png)
+![image](https://user-images.githubusercontent.com/106167818/170094503-003a0abf-13e7-4bf0-8576-db9c8a614d11.png)
+![image](https://user-images.githubusercontent.com/106167818/170095125-b755f283-63b8-49ed-884a-e1a4553ca879.png)
 ### Pembahasan
 Dapat dilihat pada hasil grafik bahwa nilai Pressure tertinggi menyentuh angka 1030 hPa yang mana itu terjadi pada akhir bulan April 2022. Sedangkan untuk nilai Wind Direction dan Wind Speed tidak konstant dan terus berubah-ubah dan mengalami penurunan di akhir bulan April 2022. Yang terakhir, untuk nilai Water Temperature terus mengalami kenaikan dalam rentang waktu 45 hari tersebut hingga akhirnya mencapai angka lebih dari 24 degC. Apabila dilihat dari nilai hasil grafiknya, Stasiun ini memiliki nilai gelombang dan arus yang cukup besar. Stasiun ini sendiri terletak pada koordinat 32.279 N 80.406 W (32°16'44" N 80°24'23" W) yang mana apabila dilihat pada Google Earth maka lokasi stasiun ini terletak di daerah dekat pesisir Pulau Pritchards dan Pulau Hunting di Negara Bagian Amerika Serikat yaitu Carolina Selatan. Artinya baik arus, gelombang, angin atau faktor oseanografi pada Station ini tidak begitu besar seperti yang ada di laut lepas atau di tengah samudera. Selain itu, Station ini juga terletak dekat dengan lokasi Blake Pateau. Lokasi Blake Plateau sendiri memiliki arus yang statis. Namun, daerah ini sendiri masih dapat terpengaruh oleh adanya arus teluk yang berbelok dan menghasilkan pusaran siklon yang disebut dengan Charlestone Gyre (Gula et al., 2015). Arus ini sendiri terjadi akibat dari adanya perbedaan temperatur yang ada disekitar wilayah tersebut yang terdiri dari Blake Plateau, Blake Ridge, Charlestone Bump dll. Adanya anomali ini dapat mengakibatkan nilai yang ada pada grafik menjadi lebih tinggi dari biasanya
