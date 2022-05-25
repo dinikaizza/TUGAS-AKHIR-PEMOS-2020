@@ -1,13 +1,13 @@
 # TUGAS AKHIR PRAKTIKUM PREMOGRAMAN OSEANOGRAFI KEL 14
 Tugas ini dibuat untuk memenuhi Tugas Akhir Praktikum Pemograman Oseanografi 2022.Tugas ini memuat Pengerjaan semua modul dalam praktikum pemograman oseanografi menggunakan bahasa pemrograman python yang dapat dilakukan pada beberapa platform seperti Google Colaboratory dan Jupyter Notebook. Sedangkan untuk library yang digunakan kali ini adalah Numpy,dan Matplotlib. Seluruh script yang dibuat adalah hasil kelompok 14 Oseanografi 2020. Semoga dapat bermanfaat!
 ## AUTHORS :
-1. Dinika Izzati
-2. Deva Yusuf Dhanadyaksa
-3. Meiriza Adwina Setiorini
-4. Nandika Abubakar Putri
-5. Nanda Shifa Sherina
-6. Oliver Kahn Parlindungan
-7. Renata Gending Fadhillah 
+1. Dinika Izzati            26050120130087
+2. Deva Yusuf Dhanadyaksa   26050120140148
+3. Meiriza Adwina Setiorini 26050120140138
+4. Nandika Abubakar Putri   26050120140054   
+5. Nanda Shifa Sherina      26050120120035
+6. Oliver Kahn Parlindungan 26050120140141
+7. Renata Gending Fadhillah 26050120140137 
 ## DAFTAR ISI :
 1. MODUL 1 : ADVEKSI-DIVUSI 1D 
 2. MODUL 2 : ADVEKSI-DIFUSI 2D 
