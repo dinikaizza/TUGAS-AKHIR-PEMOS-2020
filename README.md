@@ -191,6 +191,30 @@ Output Gambar
 ### Pembahasan
 Pada skenario 1 didapatkan bahwa konsentrasi yang ada pada grafik terus berkurang seiring bertambahnya periode. Selain itu, terlihat juga pergerakan polutan ke arah timur yang mana ini menandakan bahwa arus yang terjadi dilapangan juga bergerak kearah timur. Pada skenario 2, terlihat adanya penurunan konsentrasi yang terjadisecara drastic dalam kurun periode t 1-31. Arah arus pun terlihat bergerak ke arah tenggara yang mana hal ini diikuti oleh pergerakan konsentrasi polutan yang bergerak secara kontinu ke arah tenggara yang ditandai dengan adanya perpindahan grid pada grafik. Pada skenario 3 Arus bergerak ke arah selatan yang mana diikuti juga oleh pergerakan konsentrasi polutan ke arah yang sama. Konsentrasi polutan pada skenario 3 juga semakin menurun seiring bertambahnya periode t pada grafik yang mana pada titik akhir ini, konsentrasi polutan tertinggi memiliki nilai 4. Pada skenario 4, terlihat bahwa pada periode antara t 0,5-18 penurunan konsentrasi polutan terjadi secara drastis dimana hal ini diikuti oleh pergerakan konsentrasi polutan yang semakin bergerak ke arah timur laut seiring bertambahnya nilai t. Arah pergerakan dan penyebaran suatu zat yang ada pada suatu perairan biasanya dipengaruhi oleh konsentrasi zat itu sendiri (Firmansyah et al., 2021)
 ## MODUL 3 : HIDRODINAMIKA 1D
+Hidrodinamika adalah cabang dari mekanika fluida, khususnya zat cair incompressible yang di pengaruhi oleh gaya internal dan eksternal. Dalam hidrodinamika laut gaya-gaya yang terpenting adalah gaya gravitasi, gaya gesekan, dan gaya coriolis . Dalam oseanografi, mekanika fluida digunakan berdasarkan mekanika Newton yang dimodifikasi dengan memperhitungkan turbelensi.
+
+### Jenis Persamaan
+1. Persamaan Momentum
+
+    ∑〖fx 〗= ∂u/∂t +u ∂/∂x + v∂/∂x
+3. Persamaan Kontinuitas
+
+    (∂(ρζ))/(∂t ) + (∂(ρUh))/(∂t ) = ρq_x
+4. Persamaan Pembangun 1
+
+    ∂u/∂t +g ∂ζ/(∂x ) = 0
+5. Persamaan Pembangun 2
+
+    ∂ζ/(∂t )+H ∂u/∂x = 0
+6. Persamaan Transport 1
+
+    (∂u_t)/∂t +H ∂ζ/(∂x ) = 0
+7. Persamaan Transport 2
+
+    ∂ζ/(∂t )+H (∂u_t)/∂x = 0
+### Pengaplikasian 
+Hidrodinamika yang dipelajari dalam kelautan ada bermacam-macam. Diantaranya hidrodinamika arus laut, hidrodinamika pasang surut, hidrodinamika gelombang, hidrodinamika transport sedimen, dan hidrodinamika polutan. Model hidrodinamika sangat penting untuk mensimulasikan pola gerak air laut secara global. Model hidrodinamika dalam air laut dapat digunakan untuk mengkaji disipasi panas di laut, sebaran radionuklida yang terlepas ke badan air laut serta untuk pengkajian klimatologi laut.
+
 ## MODUL 4 : HIDRODINAMIKA 2D
 Secara umum, model hidrodinamika 2D yang dijalankan cukup mampu merepresentasikan kondisi hidrodinamika di lokasi penelitian. Hasil simulasi model menunjukkan bahwa arus cenderung memiliki arah bolak - balik sesuai dengan pasut yang terjadi. Pola sebaran konsentrasi Ammonia, BOD, Nitrat, dan TSS secara signifikan dipengaruhi oleh pola arus yang terjadi. Dalam menyelesaikan persamaan Hdirodinamika 2D, dapat menggunakan script yang telah diberikan. Pada saat menggunakan script, diperlukan coding dengan menggunakan Google Colab dan library seperti matplotlib dan numphy, selain itu juga diperlukan modul siphon. Dimana dalam mengerjakan script ini diperlukan beberapa data untuk memenuhi nilai parameter yang ada. Berdasarkan data yang telah didapatkan, maka dapat dibuat grafik perhitungan nilai proses awal dengan beberapa parameter. Setelah memasukkan parameter yang diperlukan, maka akan didapat juga  pressure, windspeed, dan water temperature. Untuk mendapatkan hasil dari perhitungan yang telah dilakukan. Selanjutnya klik run untuk mendapatkan hasil grafik yang diperlukan. Dimana nantinya akan didapat 3 grafik dalam menyelesai persamaan ini, yaitu terdapat grafik pressure, windspeed, dan water temperature.
 
