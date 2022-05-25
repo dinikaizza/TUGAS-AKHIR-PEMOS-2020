@@ -231,6 +231,7 @@ Proses Awal, memasukkan nilai awal
     To = 300 #Periode
 
 Memasukkan kedalam rumus (parameter yang diukur) kecepatan arus, sudut gelombang, dan koefisien panjang gelombang
+    
     g = 9.8
     pi = np.pi
     C = np.sqrt(g*D) #Kecepatan Arus
